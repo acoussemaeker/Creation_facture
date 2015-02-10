@@ -53,6 +53,8 @@
                 <li <?php if ($_SERVER['PHP_SELF'] == "/CTE/new_structure.php") echo "class='active'"; ?>><a href="new_structure.php">Nouvelle structure</a></li>
                 <li <?php if ($_SERVER['PHP_SELF'] == "/CTE/liste_produit.php") echo "class='active'"; ?>><a href="liste_produit.php">Liste des produits</a></li>
                 <li <?php if ($_SERVER['PHP_SELF'] == "/CTE/new_produit.php") echo "class='active'"; ?>><a href="new_produit.php">Nouveau produit</a></li>
+                <li <?php if ($_SERVER['PHP_SELF'] == "/CTE/liste_client.php") echo "class='active'"; ?>><a href="liste_client.php">Liste des clients</a></li>
+                <li <?php if ($_SERVER['PHP_SELF'] == "/CTE/new_client.php") echo "class='active'"; ?>><a href="new_client.php">Nouveau client</a></li>
 <!--                <li <?php // if ($_SERVER['PHP_SELF'] == "/CTE/interro.php") echo "class='active'"; ?>><a href="interro.php">Interrogations</a></li>
                 <li <?php // if ($_SERVER['PHP_SELF'] == "/CTE/syllabus.php") echo "class='active'"; ?>><a href="syllabus.php">Syllabus</a></li>
                 <br/><hr/><br/>-->
