@@ -48,11 +48,15 @@
         <div class="menu-gauche" >
             <ul class="nav nav-pills nav-stacked">
                 <h5 class="titreSection">Menu</h5>
+                <li <?php if ($_SERVER['PHP_SELF'] == "/CTE/index.php") echo "class='active'"; ?>><a href="index.php">Liste des factures</a></li>
                 <li <?php if ($_SERVER['PHP_SELF'] == "/CTE/new_facture.php") echo "class='active'"; ?>><a href="new_facture.php">Nouvelle facture</a></li> <!--Si la page actuelle est 'new_facture.php', on ajoute la classe 'active' à l'élément-->
+                <hr/>
                 <li <?php if ($_SERVER['PHP_SELF'] == "/CTE/liste_structure.php") echo "class='active'"; ?>><a href="liste_structure.php">Liste des structures</a></li>
                 <li <?php if ($_SERVER['PHP_SELF'] == "/CTE/new_structure.php") echo "class='active'"; ?>><a href="new_structure.php">Nouvelle structure</a></li>
+                <hr/>
                 <li <?php if ($_SERVER['PHP_SELF'] == "/CTE/liste_produit.php") echo "class='active'"; ?>><a href="liste_produit.php">Liste des produits</a></li>
                 <li <?php if ($_SERVER['PHP_SELF'] == "/CTE/new_produit.php") echo "class='active'"; ?>><a href="new_produit.php">Nouveau produit</a></li>
+                <hr/>
                 <li <?php if ($_SERVER['PHP_SELF'] == "/CTE/liste_client.php") echo "class='active'"; ?>><a href="liste_client.php">Liste des clients</a></li>
                 <li <?php if ($_SERVER['PHP_SELF'] == "/CTE/new_client.php") echo "class='active'"; ?>><a href="new_client.php">Nouveau client</a></li>
 <!--                <li <?php // if ($_SERVER['PHP_SELF'] == "/CTE/interro.php") echo "class='active'"; ?>><a href="interro.php">Interrogations</a></li>

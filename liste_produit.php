@@ -24,7 +24,7 @@
                         ' . $info->Description . '
                     </td>
                     <td>
-                        ' . $info->Prix . '
+                        ' . $info->Prix . ' €
                     </td>
                 </tr>';
     }

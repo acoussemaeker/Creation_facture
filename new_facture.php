@@ -1,46 +1,86 @@
 <?php
-    $titre = 'Nouvelle facture';
-    include 'header.php';
+$titre = 'Nouvelle facture';
+include 'header.php';
+include 'Connection_BDD.php';
 ?>
 <div class="nouveau">
     <div class="milieuPage">
         <h2 class="text-center">Nouvelle Facture</h2>
         </br>
-        
+        <div class="form-group">
+            <label for="nom">Nom</label>
+            <input type="text" class="form-control" id="nom"  name='nom'>
+        </div>
         <div class="form-group">
             <label for="date">Date</label>
             <input type="text" class="form-control" id="date"  placeholder="jj/mm/aaaa" value="<?php echo date('d/m/Y'); ?>">
         </div>
-        
         <div class="form-group">
-            <input type="radio" name="heure" checked value="0"> Matin
-            <input type="radio" name="heure" value="1" style="margin-left:2em"> Après-midi
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description"  name='description'>
         </div>
-        
-        <div class="form-group">
-            
-        </div>
-        
-        <div class="form-group">
-            <label for="contenu">Contenu du cours</label>
-            <textarea id="contenu" class="form-control"></textarea>
-        </div>
-        
-        <hr/>
+        <div id="Structure">
             <div class="form-group">
-               <label for="travail">Travail donné</label>
-               <textarea id="travail" class="form-control" placeholder="Travail à faire..."></textarea>
+                <label for="structure">Structure</label>
+                <select id="structure" name='structure' class="form-control">
+                    <option value="0">Choisissez une Structure...</option>
+                    <?php
+                    $SQL = "SELECT ID,Nom FROM structure
+                                ORDER BY Nom ASC";
+                    $rs = $cnx->query($SQL);
+
+                    while ($info = $rs->fetch_object()) {
+                        echo '<option value="' . $info->ID . '" >' . $info->Nom . '</option>';
+                    }
+                    ?>
+                </select>
             </div>
-            <input type="text" id="dateButoir" placeholder="Date butoir... (jj/mm/aaaa)" class="form-control" />
-        <hr/>
-        
-        
-        <div class="form-group">
-            <label>Interrogation <input type="checkbox" onclick="readonlySujet()" id="interro"/></label>
-            <input type="text" class="form-control" readonly id="sujet" placeholder="Sujet..." />
-        </div>
-        
-        <button type="button" onclick="saveCours()" class="btn btn-success btn-lg">Sauvegarder</button>
-        <br/><br/>
-    </div>
-</div>
+            <div id="client">
+                <div class="form-group">
+                    <label for="client">Client</label>
+                    <select id="client" name='client' class="form-control">
+                        <option value="0">Choisissez un Client...</option>
+                        <?php
+                        $SQL = "SELECT ID,Nom FROM client
+                                ORDER BY Nom ASC";
+                        $rs = $cnx->query($SQL);
+
+                        while ($info = $rs->fetch_object()) {
+                            echo '<option value="' . $info->ID . '" >' . $info->Nom . '</option>';
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div id="produits">
+                    <div class="form-group">
+                        <label for="produit">Produit</label>
+
+                        <select id="produit" name='produit' class="form-control test">
+                            <option value="0">Choisissez un Produit...</option>
+                            <?php
+                            $SQL = "SELECT ID,Nom FROM produit
+                                ORDER BY Nom ASC";
+                            $rs = $cnx->query($SQL);
+
+                            while ($info = $rs->fetch_object()) {
+                                echo '<option onclick="test()" value="' . $info->ID . '">' . $info->Nom . '</option>';
+                            }
+                            ?>
+                        </select>
+                        <table class="table table-hover table-condensed">
+                            <thead>    
+                                <tr class="info">
+                                    <th>Nom</th>
+                                    <th>Description</th>
+                                    <th>Prix</th>
+                                </tr>
+                            <tbody>
+                                
+                            </tbody>
+                            </thead>
+                        </table>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-lg">Sauvegarder</button>
+                    <br/><br/>
+                </div>
+            </div>

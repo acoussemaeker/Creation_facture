@@ -1,5 +1,5 @@
 <?php
-    $titre = 'Nouveau client';
+    $titre = 'Liste client';
     include 'header.php';
 include 'Connection_BDD.php';
 ?>
