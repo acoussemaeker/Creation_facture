@@ -58,21 +58,22 @@ include 'Connection_BDD.php';
                         <select id="produit" name='produit' class="form-control test">
                             <option value="0">Choisissez un Produit...</option>
                             <?php
-                            $SQL = "SELECT ID,Nom FROM produit
+                            $SQL = "SELECT * FROM produit
                                 ORDER BY Nom ASC";
                             $rs = $cnx->query($SQL);
 
                             while ($info = $rs->fetch_object()) {
-                                echo '<option onclick="test()" value="' . $info->ID . '">' . $info->Nom . '</option>';
+                                echo '<option onclick="test()" value="' . $info->ID . '-' . $info->Nom . '-' . $info->Description . '-' . $info->Prix . '">' . $info->Nom . '</option>';
                             }
                             ?>
                         </select>
-                        <table class="table table-hover table-condensed">
+                        <table class="table table-hover table-condensed" id="contain_produit">
                             <thead>    
                                 <tr class="info">
                                     <th>Nom</th>
                                     <th>Description</th>
                                     <th>Prix</th>
+                                    <th></th>
                                 </tr>
                             <tbody>
                                 
