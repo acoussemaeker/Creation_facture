@@ -19,6 +19,10 @@
                 <label for="adresse">Adresse</label>
                 <input type="text" class="form-control" id="adresse" name="adresse" >
             </div>
+            <div class="form-group">
+                <label for="typepaiement">Type de paiement</label>
+                <input type="text" class="form-control" id="typepaiement" name="typepaiement"  placeholder="exemple : Paiement à réception"/>
+            </div>
             <button type="submit" class="btn btn-success btn-lg">Sauvegarder</button>
             <br/><br/>
         </form>

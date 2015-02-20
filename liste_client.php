@@ -9,6 +9,7 @@ include 'Connection_BDD.php';
             <th>Nom</th>
             <th>Description</th>
             <th>Adresse</th>
+            <th>Type de paiemaent</th>
         </tr>
     </thead>
     <?php
@@ -25,6 +26,9 @@ include 'Connection_BDD.php';
                     </td>
                     <td>
                         ' . $info->Adresse . '
+                    </td>
+                    <td>
+                        ' . $info->TypePaiement . '
                     </td>
                 </tr>';
     }
