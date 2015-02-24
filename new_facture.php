@@ -64,7 +64,7 @@ include 'Connection_BDD.php';
                                 $rs = $cnx->query($SQL);
 
                                 while ($info = $rs->fetch_object()) {
-                                    echo '<option onclick="test()" value="' . $info->ID . '-' . $info->Nom . '-' . $info->Description . '-' . $info->Prix . '">' . $info->Nom . '</option>';
+                                    echo '<option onclick="AjoutProduit()" value="' . $info->ID . '-' . $info->Nom . '-' . $info->Description . '-' . $info->Prix . '">' . $info->Nom . '</option>';
                                 }
                                 ?>
                             </select>

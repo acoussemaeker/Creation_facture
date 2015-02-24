@@ -1,5 +1,5 @@
 
-function test() {
+function AjoutProduit() {
     var test = $("#produit").val();
 //    alert(test);
     var splittest = test.split('-');
